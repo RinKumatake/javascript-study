@@ -4,7 +4,7 @@ const combination = (array) => {
     for(let i = 0; i < array.length -1; i++) {
         let tmpArray = array.slice(i+1,array.length)
         for(let j = 0; j < tmpArray.length; j ++) {
-            x = `${array[i]} vs ${tmpArray[j]}`;
+            let x = `${array[i]} vs ${tmpArray[j]}`;
             array2.push(x);
         }
     }    
@@ -12,7 +12,7 @@ const combination = (array) => {
 }
 
 const array1 = ['A', 'B', 'C', 'D', 'E'];
-for(element of combination(array1)){
+for(let element of combination(array1)){
     console.log(element);
 }
 
