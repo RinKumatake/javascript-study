@@ -12,8 +12,7 @@ const combination = (array) => {
 }
 
 const array1 = ['A', 'B', 'C', 'D', 'E'];
-const combinations = combination(array1);
-for(element of combinations){
+for(element of combination(array1)){
     console.log(element);
 }
 
