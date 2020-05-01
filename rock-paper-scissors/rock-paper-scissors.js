@@ -1,8 +1,4 @@
 'use strict';
-const startButton = document.getElementById('start');
-const playerInput = document.getElementById('rps');
-const display = document.getElementById('display-area');
-
 /**
  * 出した手の文字列を渡すとコンピュータとじゃんけんした結果を返す
  * @param {String} s プレイヤーの出した手 
