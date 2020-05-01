@@ -31,14 +31,9 @@ const rockPaperScissors = (s) => {
 }
 
 
-
-
-startButton.onclick = () => {
-    const rps = playerInput.value;
-    const result = rockPaperScissors(rps);
-    display.innerText = `結果は・・・${result}`  
-    console.log(result)
-}
+console.log(rockPaperScissors("GU"));
+console.log(rockPaperScissors("CHOKI"));
+console.log(rockPaperScissors("PA"));
 
 
 
