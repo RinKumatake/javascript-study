@@ -16,10 +16,11 @@ const rockPaperScissors = (s) => {
         player = 2;
     }
    
-    let rps = ["GU", "CHOKI", "PA"] //最終結果出力時にインデックス番号と出した手(数字)と照合するための配列
-    let enemy = Math.floor(Math.random()*3); //コンピュータの出す手(0, 1, 2    
+    const rps = ["GU", "CHOKI", "PA"] ;//最終結果出力時にインデックス番号と出した手(数字)と照合するための配列
+
+    const enemy = Math.floor(Math.random()*3); //コンピュータの出す手(0, 1, 2    
    
-    const result = player - enemy
+    const result = player - enemy;
     
     if (result == -1 || result == 2){
         return `あなたが${rps[player]}、相手が${rps[enemy]}なのであなたの勝ちです`;
