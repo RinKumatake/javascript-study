@@ -16,6 +16,7 @@ const rockPaperScissors = () => {
     }
     //勝負の間繰り返す
     while (janken.length > 1) {
+        console.log(`${janken.length}人でじゃんけん`)
         let jkn =[] //プレイヤーの手数を調べるために用意した配列
         for(let j=0; j<janken.length; j++){
             let b = gcpg();
@@ -32,17 +33,19 @@ const rockPaperScissors = () => {
         //５人の手は2パターン,あるいは2パターンに銃（条件を満たさなければ常に負けだから）を加えた3パターンになる
         //勝った人は抜けていくルール
         let set1 = new Set(jkn); //プレイヤーの手数を調べる
-        if(set1.size == 2 || set1.size == 3 && set1.has(3)){   
-        if (set1.has(0) && set1.has(1)){
+        if(set1.size == 2){   
+            if (set1.has(0) && set1.has(1)){
                 janken = janken.filter(b => b[1]==0);
-        } else if (set1.has(1) && set1.has(2)){
+            } else if (set1.has(1) && set1.has(2)){
                 janken = janken.filter(b => b[1]==1);
-        } else if (set1.has(2) && set1.has(0)) {
+            } else if (set1.has(2) && set1.has(0)) {
                 janken = janken.filter(b => b[1]==2);
-        } else if (set1.has(3) && set1.size(2)){
+            } else if (set1.has(3)){
                 janken = janken.filter(b => b[1]==3);
+            }
+        }  else if(set1.has(3)){
+            janken = janken.filter(b=>b!=3);
         }
-    }    
     }
     return `player${janken[0][0]} が勝利しました`;
     
