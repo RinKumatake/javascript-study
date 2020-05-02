@@ -16,7 +16,7 @@ const rockPaperScissors = () => {
     }
     //勝負の間繰り返す
     while (janken.length > 1) {
-        let jkn =[]
+        let jkn =[] //プレイヤーの手数を調べるために用意した配列
         for(let j=0; j<janken.length; j++){
             let b = gcpg();
             janken[j][1] = b;
@@ -31,7 +31,7 @@ const rockPaperScissors = () => {
         //勝ち負け判定部分
         //５人の手は2パターン,あるいは2パターンに銃（条件を満たさなければ常に負けだから）を加えた3パターンになる
         //勝った人は抜けていくルール
-        let set1 = new Set(jkn);
+        let set1 = new Set(jkn); //プレイヤーの手数を調べる
         if(set1.size == 2 || set1.size == 3 && set1.has(3)){   
         if (set1.has(0) && set1.has(1)){
                 janken = janken.filter(b => b[1]==0);
