@@ -8,6 +8,11 @@
 <body>
     <p>"あいうえお”の文字をクリックすると文字の色が変わります</p>
     <div id="moji"></div>
+    <style>
+        div {
+            user-select: none;
+            }
+    </style>
     <script>
         const moji = document.getElementById('moji');
         moji.innerText = 'あいうえお';
