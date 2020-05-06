@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSで文字を表示させる</title>
+</head>
+<body>
+    <p>"あいうえお”の文字をクリックすると文字の色が変わります</p>
+    <div id='moji'></div>
+    <script>
+        const moji = document.getElementById('moji');
+        moji.innerText = 'あいうえお';
+        moji.addEventListener('click', function(){
+        let color = ['orange', 'green', 'blue', 'red'];
+        let number = Math.floor(Math.random()*4)
+        mojiColor = color[number];
+        moji.style.color = mojiColor;
+        });
+    </script>
+</body>
+</html>
