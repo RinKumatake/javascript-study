@@ -30,10 +30,10 @@ const rockPaperScissors = () => {
             console.log(`player${element[0]}の手は${rpsg[hand]}`);
         }
         //勝ち負け判定部分
-        //考慮するべきは、５人の手が2パターン,あるいは2～3パターン+銃（条件を満たさなければ常に負けだから）の時
+        //考慮するべきは、5人の手が2パターン,あるいは2～3パターン+銃（条件を満たさなければ常に負けだから）の時
         //勝った人は抜けていくルール
         let set1 = new Set(jkn); //プレイヤーの手数を調べる
-        if(janken.length===3 && set1.size === 2){ //プレイヤーが３人以上、手数が2パターン
+        if(janken.length===3 && set1.size === 2){ //プレイヤーが3人以上、手数が2パターン
             if (set1.has(0) && set1.has(1)){
                 janken = janken.filter(b => b[1]===0);
             } else if (set1.has(1) && set1.has(2)){
@@ -43,7 +43,7 @@ const rockPaperScissors = () => {
             } else if (set1.has(3)){
                 janken = janken.filter(b => b[1]===3);
             }
-        } else if(janken.length==2 && set1.has(3)){//最後の2人になって銃とそれ以外なら銃の負け
+        } else if(janken.length===2 && set1.has(3)){//最後の2人になって銃とそれ以外なら銃の負け
             janken = janken.filter(b=>b[1]!=3);
         } else if(set1.has(3)){
             janken = janken.filter(b=>b[1]==3);
