@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消費税の計算</title>
+</head>
+<body>
+    <div id="container" style="margin-right: auto; margin-left: auto; margin-top: 100px; width: 1000px;">
+        <h1>税抜き価格を入力してください</h1>
+        <input type="text" id="price" size="40" maxlength="15" style="height: 25px;">
+        <button id="eight-culc">8%で計算する</button>
+        <button id="ten-culc">10%で計算する</button>
+        <h2>消費税額</h2>
+        <div id="tax-result-area"></div>
+        <h2>合計金額</h2>
+        <div id="total-result-area"></div>
+    </div>
+
+    <script>
+        const priceInput = document.getElementById('price');
+        const eightCulc = document.getElementById('eight-culc');
+        const tenCulc = document.getElementById('ten-culc')
+        const taxResultDivided = document.getElementById('tax-result-area');
+        const totalResultDivided = document.getElementById('total-result-area')
+
+        const taxCulc = (price, rate) =>{//価格と税率を渡すと、税額と税込み価格を返す関数
+            let tax = Math.floor(price * (rate/100));
+            let total = Math.floor(price * (1 + rate/100));
+            return {tax, total};
+        }
+
+        eightCulc.onclick = () => {//税率8%で計算
+            const price = priceInput.value; 
+            if(price.length === 0) {
+                return;
+            }
+            let {tax, total} = taxCulc(price, 8);
+            taxResultDivided.innerText = tax +"円になります";
+            totalResultDivided.innerText = total + "円になります";
+        }
+
+        tenCulc.onclick = () => {//税率10%で計算
+            const price = priceInput.value; 
+            let {tax, total} = taxCulc(price, 10);
+            if(price.length === 0) {
+                return;
+            }
+            taxResultDivided.innerText = tax + "円になります";
+            totalResultDivided.innerText = total + "円になります";
+        }
+    </script>
+</body>
+</html>
