@@ -33,6 +33,8 @@
         eightCulc.onclick = () => {//税率8%で計算
             const price = priceInput.value; 
             if(price.length === 0) {
+                taxResultDivided.innerText = '';
+                totalResultDivided.innerText = '';
                 return;
             }
             let {tax, total} = taxCulc(price, 8);
@@ -44,6 +46,8 @@
             const price = priceInput.value; 
             let {tax, total} = taxCulc(price, 10);
             if(price.length === 0) {
+                taxResultDivided.innerText = '';
+                totalResultDivided.innerText = '';
                 return;
             }
             taxResultDivided.innerText = tax + "円になります";
