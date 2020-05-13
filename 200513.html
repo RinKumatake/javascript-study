@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職業アンケート</title>
+</head>
+<body>
+    <style>
+        #container {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 80%;
+            height: 3.2rem;
+            }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+    
+    <div id="container">
+        <form name="form1">
+            <select name="job" id="job" onchange="selectboxChange()">
+                <option value="">選択してください</option>
+                <option value="無職">無職</option>
+                <option value="正社員">正社員</option>
+                <option value="アルバイト">アルバイト</option>
+            </select>
+        </form>    
+        <div id="result"></div>
+    </div>
+
+    <script>
+       function selectboxChange() {
+           const target = document.getElementById('result');
+           const job = document.form1.job;
+           const indexNum = job.selectedIndex;
+           const str = job.options[indexNum].value;
+           if (str === '無職') {
+                target.innerText = '働いてください';
+                target.style.color = 'red';
+                target.style.fontSize = '30px';
+           } else {
+               target.innerText = `${str}が選択されました`;
+               target.style.color = 'black';
+               target.style.fontSize = '15px';
+           }
+       }
+    </script>
+
+</body>
+</html>
