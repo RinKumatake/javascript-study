@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラーメン食べたい</title>
+</head>
+<body>
+    <style>
+        #container {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 80%;
+            height: 3.2rem;
+            }
+        #order {
+            margin-top: 20px;
+        }
+    </style>
+    
+    <div id="container">
+        <h2>トッピングを選んでください</h2>
+        <form name="form1">
+            <select name="noodle" id="noodle" onchange="selectboxChange()" multiple size="5">
+                <option value="チャーシュー">チャーシュー</option>
+                <option value="味付け卵">味付け卵</option>
+                <option value="メンマ">メンマ</option>
+                <option value="ネギ">ネギ</option>
+                <option value="海苔">海苔</option>
+            </select>
+        </form>    
+        <div id="order"></div>
+    </div>
+
+    <script>
+        function selectboxChange() {
+            const noodle = document.getElementById('noodle');
+            const topping = noodle.options;
+            const order = document.getElementById('order');
+            let orders = [];
+            for (let i=0; i<topping.length; i++) {//選んだトッピングを一度orders配列に入れる
+                if(topping[i].selected) {
+                    orders.push(topping[i].value)
+                }               
+            }
+
+            if(orders.length===noodle.length) {//全てのトッピングを選んだ時
+                order.innerText = 'そんなに乗せたら太りますよ・・・';
+            } else {
+                let a = '';
+                for(const element of orders) {//orders配列から要素を取り出してオーダーした品物を表示させる
+                    a += ` " ${element} " `;
+                }               
+                order.innerText = a + 'をオーダーしました';
+            }
+        }        
+    </script>
+
+</body>
+</html>
