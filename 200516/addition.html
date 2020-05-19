@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足し算</title>
+</head>
+<body>
+    <style>
+        #container {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 80%;
+            height: 3.2rem;
+            }
+        #result {
+            margin-top: 20px;
+        }
+        #reset-button {
+            margin: auto;
+        }
+    </style>
+
+    <div id="container">
+        <p>目指せ！3問連続正解！！！</p>
+        <div id="add-number"></div>
+        <p>答えを下に入力してください</p> 
+        <p id="next-message">正解です、"次の問題"ボタンを押して次の問題に進んでください</p>       
+        <input type="text" id="answer-area">
+        <button id="send-button">解答を送信</button>
+        <button id="next-button">次の問題</button>
+        <div id="result-area"></div>
+        <div id = "picture-area"></div>
+        <button id="reset-button">もう一度挑戦</button>
+    </div>
+<script src="./addition.js"></script>
+</body>
+</html>
