@@ -32,7 +32,9 @@ nextButton.disabled = true;
 sendButton.addEventListener('click', () => {        
     let myAnswer = answer.value;
     if (isNaN(myAnswer)) {
+        answer.value = '';
         alert("半角数字以外は入力できません");
+        return;
     }  
     if (myAnswer == computerAnswer){
         nextMessage.style.display = "block";
